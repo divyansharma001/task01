@@ -26,7 +26,7 @@ export default function ScaleTraining() {
   };
 
   return (
-    <div className="min-h-screen bg-[#3b0764] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#432459] to-[#646464] text-white">
       {/* Header */}
       <header className='flex justify-center items-center flex-col gap-8'>
         {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
@@ -100,11 +100,14 @@ export default function ScaleTraining() {
 
         {/* CTA Section */}
         <div className="max-w-7xl mx-auto px-4 mt-8">
-          <div className="bg-gradient-to-r from-purple-700 to-purple-600 rounded-2xl px-8 py-12 text-center text-white shadow-2xl">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-wide mb-4">
+          <div className="relative bg-gradient-to-r from-[#572B6F] to-[#321B49] rounded-2xl px-8 py-12 text-center text-white shadow-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-[0_20px_40px_rgba(115,63,150,0.4)] group cursor-pointer">
+            {/* Shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-full -translate-y-full group-hover:translate-x-full group-hover:translate-y-full"></div>
+            
+            <h2 className="relative z-10 text-4xl md:text-5xl font-black uppercase tracking-wide mb-4">
               CLAIM YOUR FREE 45 MINUTES STRATEGY SESSION
             </h2>
-            <p className="text-xl md:text-2xl font-light tracking-wide">
+            <p className="relative z-10 text-xl md:text-2xl font-light tracking-wide">
               Be quick! Free slots are almost gone for this month!
             </p>
           </div>
@@ -125,7 +128,27 @@ export default function ScaleTraining() {
             </div>
           </div>
         </div>
+
+        
       </main>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-24 text-left">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-6xl mb-24 font-bold tracking-wider">© QUANTUM AGE 2025</p>
+        </div>
+      </footer>
+
+      {/* Back to Top Button */}
+      <button 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-colors duration-300 z-50"
+        aria-label="Back to top"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
     </div>
   );
 }

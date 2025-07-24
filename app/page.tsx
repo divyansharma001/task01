@@ -98,7 +98,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#432459] to-[#646464]">
       {/* Logo Section */}
       <div className="bg-white py-2 flex justify-center">
         <div className="w-24 h-24 relative">
@@ -126,7 +126,7 @@ export default function Home() {
       </div>
 
       {/* Purple Hero Section */}
-      <div className="bg-gradient-to-b from-purple-800 to-purple-900 px-4 py-10">
+      <div className="bg-gradient-to-b from-[#432459] to-[#646464] px-4 py-10">
         {/* Course Value Banner */}
         <div className="max-w-5xl mx-auto mb-12">
           <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl">
