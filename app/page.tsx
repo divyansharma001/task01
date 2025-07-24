@@ -207,65 +207,138 @@ export default function Home() {
         </div>
 
         {/* Lead Form Section */}
-        <div className="e-con-inner max-w-6xl mx-auto px-2 mb-8 sm:mb-12 md:mb-16">
-          <div className="elementor-element elementor-element-2e9a7d49 e-con-full e-flex e-con e-child" 
-               data-id="2e9a7d49" 
-               data-element_type="container">
-          </div>
-          
-          <div className="elementor-element elementor-element-7351b7ce e-con-full e-flex e-con e-child" 
-               data-id="7351b7ce" 
-               data-element_type="container" 
-               data-settings='{"background_background":"gradient"}'>
-            <div className="elementor-element elementor-element-510e265 elementor-widget elementor-widget-html" 
-                 data-id="510e265" 
-                 data-element_type="widget" 
-                 data-widget_type="html.default">
-              <div className="elementor-widget-container">
-                <div 
-                  id="inline-mXfM0uso9t1teaAv94jV-div" 
-                  className="ep-iFrameContainer" 
-                  style={{ borderRadius: '3px', display: 'block' }}
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 md:px-8 mb-8 sm:mb-12 md:mb-16">
+          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
+            {/* Logo */}
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <img decoding="async" width="500" height="500" src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" className="attachment-large size-large wp-image-16077 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain" alt="Quantum Age Logo" srcSet="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png 500w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-300x300.png 300w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-150x150.png 150w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-100x100.png 100w" sizes="(max-width: 500px) 100vw, 500px"/>
+                <h1 
+                  className="text-4xl md:text-5xl font-bold text-[#4c1d95]"
+                  style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}
                 >
-                  <div 
-                    id="inline-mXfM0uso9t1teaAv94jV-wrapper" 
-                    className="ep-wrapper" 
-                    style={{ borderRadius: '3px' }}
-                  >
-                    <iframe 
-                      src="https://api.leadconnectorhq.com/widget/form/mXfM0uso9t1teaAv94jV" 
-                      style={{ 
-                        width: '100%', 
-                        height: '636px', 
-                        border: 'none', 
-                        borderRadius: '3px', 
-                        overflow: 'auto', 
-                        display: 'block' 
-                      }}
-                      id="inline-mXfM0uso9t1teaAv94jV"
-                      data-layout="{'id':'INLINE'}"
-                      data-trigger-type="alwaysShow"
-                      data-trigger-value=""
-                      data-activation-type="alwaysActivated"
-                      data-activation-value=""
-                      data-deactivation-type="neverDeactivate"
-                      data-deactivation-value=""
-                      data-form-name="Main Optin Form (India)"
-                      data-height="undefined"
-                      data-layout-iframe-id="inline-mXfM0uso9t1teaAv94jV"
-                      data-form-id="mXfM0uso9t1teaAv94jV"
-                      title="Main Optin Form (India)"
-                      scrolling="yes"
-                    />
-                  </div>
-                </div>
+                  THE QUANTUM AGE
+                </h1>
               </div>
             </div>
-          </div>
-          
-          <div className="elementor-element elementor-element-38bf8eb0 e-con-full e-flex e-con e-child" 
-               data-id="38bf8eb0" 
-               data-element_type="container">
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Full Name */}
+              <div>
+                <label 
+                  htmlFor="fullName" 
+                  className="block text-base font-semibold text-gray-700 mb-2"
+                >
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                    errors.fullName 
+                      ? 'border-red-500' 
+                      : 'border-gray-300'
+                  }`}
+                  placeholder="Full Name"
+                />
+                {errors.fullName && (
+                  <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+                )}
+              </div>
+
+              {/* Email */}
+              <div>
+                <label 
+                  htmlFor="email" 
+                  className="block text-base font-semibold text-gray-700 mb-2"
+                >
+                  Email *
+                </label>
+                <div className="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                      errors.email 
+                        ? 'border-red-500' 
+                        : 'border-gray-300'
+                    }`}
+                    placeholder="Email"
+                  />
+                  <img 
+                    src="https://i.ibb.co/6g2wVpD/Screenshot-2024-07-25-at-2-05-15-AM-removebg-preview.png" 
+                    alt="Email Icon" 
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-auto"
+                  />
+                </div>
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
+                <p className="text-xs text-gray-500 mt-2">
+                  P.S. You'll get access to the course via Email (make sure it is correct).
+                </p>
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label 
+                  htmlFor="phone" 
+                  className="block text-base font-semibold text-gray-700 mb-2"
+                >
+                  Phone *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                    errors.phone 
+                      ? 'border-red-500' 
+                      : 'border-gray-300'
+                  }`}
+                  placeholder="Phone"
+                />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                )}
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 px-6 text-lg font-bold text-white rounded-md transition-all duration-300 text-center ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-[#6d28d9] hover:bg-[#5b21b6]'
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Submitting...</span>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center">
+                      <span>WATCH NOW FOR FREE!</span>
+                      <span className="text-xs font-normal mt-1">
+                        Instant access to masterclass & marketing course!
+                      </span>
+                    </div>
+                  )}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -273,11 +346,9 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <motion.div 
+      <div 
         className="elementor-element bg-black elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
-        data-id="5cf9b718" 
-        data-element_type="container" 
-        data-settings='{"background_background":"classic"}'
+    
       >
         <div className="e-con-inner max-w-6xl mx-auto px-2 sm:px-4">
           <div className="elementor-element elementor-element-3a3d2be2 e-con-full e-flex e-con e-child" 
