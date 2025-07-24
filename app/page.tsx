@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 interface FormData {
   fullName: string;
@@ -24,6 +25,22 @@ export default function Home() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Load the form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on component unmount
+      const existingScript = document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -100,28 +117,27 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#432459] to-[#646464]">
       {/* Logo Section */}
-      <div className="bg-white py-2 flex justify-center">
-        <div className="w-24 h-24 relative">
-          {/* Lion Logo - Purple geometric design */}
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <defs>
-              <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8B5CF6" />
-                <stop offset="100%" stopColor="#6D28D9" />
-              </linearGradient>
-            </defs>
-            {/* Lion head geometric shape */}
-            <polygon points="50,10 70,25 85,45 80,65 65,75 50,80 35,75 20,65 15,45 30,25" fill="url(#purpleGradient)" />
-            {/* Mane details */}
-            <polygon points="30,20 25,35 35,40 40,25" fill="#7C3AED" />
-            <polygon points="70,20 75,35 65,40 60,25" fill="#7C3AED" />
-            <polygon points="20,50 15,65 25,70 30,55" fill="#7C3AED" />
-            <polygon points="80,50 85,65 75,70 70,55" fill="#7C3AED" />
-            {/* Face features */}
-            <circle cx="42" cy="45" r="3" fill="white" />
-            <circle cx="58" cy="45" r="3" fill="white" />
-            <polygon points="50,50 45,60 55,60" fill="white" />
-          </svg>
+      <div className="elementor-element elementor-element-79d88927 e-con-full e-flex e-con e-parent e-lazyloaded bg-white py-4 flex justify-center" 
+           data-id="79d88927" 
+           data-element_type="container" 
+           data-settings='{"background_background":"classic"}'>
+        <div className="elementor-element elementor-element-3c60463f elementor-widget elementor-widget-image" 
+             data-id="3c60463f" 
+             data-element_type="widget" 
+             data-widget_type="image.default">
+          <div className="elementor-widget-container">
+            <img 
+              fetchPriority="high" 
+              decoding="async" 
+              width="500" 
+              height="500" 
+              src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" 
+              className="attachment-large size-large wp-image-16077 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 object-contain" 
+              alt="Quantum Age Logo" 
+              srcSet="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png 500w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-300x300.png 300w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-150x150.png 150w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-100x100.png 100w" 
+              sizes="(max-width: 500px) 100vw, 500px"
+            />
+          </div>
         </div>
       </div>
 
@@ -129,31 +145,47 @@ export default function Home() {
       <div className="bg-gradient-to-b from-[#432459] to-[#646464] px-4 py-2">
         {/* Course Value Banner */}
         <div className="max-w-5xl mx-auto mb-12">
-          <div className="bg-white rounded-b-3xl px-8 py-6 shadow-2xl">
-            <h2 className="text-black text-2xl md:text-3xl font-black text-center leading-tight tracking-tight">
-              ADVANCED MARKETING COURSE WORTH<br />
-              <span className="text-purple-700">RS. 2.5L</span> SENT TO YOUR EMAIL FOR FREE
-            </h2>
+          <div className="elementor-widget-container bg-white rounded-b-3xl px-8 py-6 shadow-2xl">
+            <h1 className="elementor-heading-title elementor-size-default text-black text-2xl md:text-3xl font-black text-center leading-tight tracking-tight">
+              ADVANCED MARKETING Course worth <br />
+              RS. 2.5l SENT TO YOUR EMAIL for free
+            </h1>
           </div>
         </div>
 
         {/* Main Headline */}
-        <div className="max-w-7xl mx-auto text-center mb-8">
-          <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 tracking-tight">
-            LEARN HOW I FILTER HIGHEST QUALITY LEADS WITH{' '}
-            <span className="text-yellow-300">"SCALE FUNNELS"</span>{' '}
-            AND TURN DEAD CAMPAIGNS INTO{' '}
-            <span className="text-yellow-300">40, 50 OR EVEN 80L+</span>{' '}
-            REVENUE PER MONTH
-          </h1>
-        </div>
+        <motion.div 
+          className="max-w-7xl mx-auto text-center mb-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.h1 
+            className="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 tracking-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            LEARN HOW I filter highest quality leads with SCALE funnels and turn dead camapigns into 40, 50 or even 80L+ revenue PER month
+          </motion.h1>
+        </motion.div>
 
         {/* Subheadline */}
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <p className="text-white text-xl md:text-2xl lg:text-3xl font-bold opacity-95 tracking-wide">
+        <motion.div 
+          className="max-w-5xl mx-auto text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <motion.p 
+            className="text-white text-xl md:text-2xl lg:text-3xl font-bold opacity-95 tracking-wide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.95 }}
+            transition={{ duration: 1, delay: 1.4 }}
+          >
             HOW TO GENERATE 20, 30 OR EVEN 40 HIGH TICKET SALES CALLS PER DAY ON AUTOMATION
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Banner Image */}
         <div className="max-w-6xl mx-auto mb-16">
@@ -165,153 +197,51 @@ export default function Home() {
         </div>
 
         {/* Lead Form */}
-        <div className="max-w-2xl mx-auto ">
-          <div className="bg-white rounded-2xl px-8 py-10 shadow-2xl">
-            {/* Logo and Title */}
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 relative mr-4">
-                  {/* Lion Logo - Purple geometric design */}
-                  <svg viewBox="0 0 100 100" className="w-full h-full">
-                    <defs>
-                      <linearGradient id="formPurpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#8B5CF6" />
-                        <stop offset="100%" stopColor="#6D28D9" />
-                      </linearGradient>
-                    </defs>
-                    {/* Lion head geometric shape */}
-                    <polygon points="50,10 70,25 85,45 80,65 65,75 50,80 35,75 20,65 15,45 30,25" fill="url(#formPurpleGradient)" />
-                    {/* Mane details */}
-                    <polygon points="30,20 25,35 35,40 40,25" fill="#7C3AED" />
-                    <polygon points="70,20 75,35 65,40 60,25" fill="#7C3AED" />
-                    <polygon points="20,50 15,65 25,70 30,55" fill="#7C3AED" />
-                    <polygon points="80,50 85,65 75,70 70,55" fill="#7C3AED" />
-                    {/* Face features */}
-                    <circle cx="42" cy="45" r="3" fill="white" />
-                    <circle cx="58" cy="45" r="3" fill="white" />
-                    <polygon points="50,50 45,60 55,60" fill="white" />
-                    {/* Crown */}
-                    <polygon points="30,5 35,15 45,10 50,20 55,10 65,15 70,5 50,0" fill="#FFD700" />
-                  </svg>
-                </div>
-                <h2 className="text-4xl font-black text-purple-800 tracking-tight">
-                  THE QUANTUM AGE
-                </h2>
-              </div>
+        <div className="max-w-2xl mx-auto">
+          <div className="elementor-element elementor-element-d5a7492 elementor-widget elementor-widget-heading animated fadeInDown" 
+               data-id="d5a7492" 
+               data-element_type="widget" 
+               data-settings='{"_animation":"fadeInDown"}' 
+               data-widget_type="heading.default">
+            <div className="elementor-widget-container">
+              <h1 className="elementor-heading-title elementor-size-default text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-center">
+                LEARN HOW I filter highest quality leads with "SCALE funnels" and turn dead camapigns into 40, 50 or even 80L+ revenue PER month
+              </h1>
             </div>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name */}
-              <div>
-                <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Full Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  placeholder="Full Name"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${
-                    errors.fullName ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  required
-                />
-                {errors.fullName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
-                )}
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Email"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  required
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-                <p className="text-sm text-gray-500 mt-2">
-                  P.S. You'll get access to the course via Email (make sure it is correct).
-                </p>
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  placeholder="Phone"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  required
-                />
-                {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                )}
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg ${
-                  isSubmitting
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 hover:shadow-xl transform hover:scale-105'
-                } text-white`}
-              >
-                {isSubmitting ? (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-2"></div>
-                    SUBMITTING...
-                  </div>
-                ) : (
-                  <>
-                    WATCH NOW FOR FREE!
-                    <div className="text-sm font-normal mt-1 opacity-90">
-                      Instant access to masterclass & marketing course!
-                    </div>
-                  </>
-                )}
-              </button>
-            </form>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white px-4 py-12">
+      <motion.footer 
+        className="bg-black text-white px-4 py-12"
+        // initial={{ opacity: 0, y: 100 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.8 }}
+        // viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-6xl mx-auto">
           {/* Copyright */}
-          <div className="mb-8">
+          <motion.div 
+            className="mb-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
               © QUANTUM AGE 2025
             </h3>
-          </div>
+          </motion.div>
 
           {/* Disclaimer */}
-          <div className="mb-8">
+          <motion.div 
+            className="mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <p className="text-sm md:text-base leading-relaxed text-gray-300 mb-4">
               This website is not a part of the Facebook website or Facebook Inc., nor is it part of Google or affiliated with Google Inc. Additionally, this site is not endorsed by Facebook or Google in any way. Facebook is a trademark of Facebook, Inc., and Google is a trademark of Google Inc.
             </p>
@@ -319,10 +249,16 @@ export default function Home() {
             <p className="text-xs md:text-sm leading-relaxed text-gray-400">
               Results Disclaimer: Results may vary. All testimonials are real. These results are meant as a showcase of what the best, most motivated clients have done. By virtue of visiting this site or interacting with any portion of this site, you agree that you are fully responsible for the investments you make and any outcomes that may result.
             </p>
-          </div>
+          </motion.div>
 
           {/* Footer Links */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm md:text-base">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm md:text-base"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
             <a href="#privacy" className="text-gray-300 hover:text-white transition-colors duration-200">
               Privacy Policy
             </a>
@@ -334,9 +270,35 @@ export default function Home() {
             <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-200">
               Contact Us
             </a>
-          </div>
+          </motion.div>
         </div>
-      </footer>
+      </motion.footer>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white p-4 rounded-full shadow-lg transition-all duration-300 z-50 group"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 2 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Scroll to top"
+      >
+        <motion.svg 
+          className="w-6 h-6" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          animate={{ y: [0, -3, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </motion.svg>
+        
+        {/* Shine effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+      </motion.button>
     </div>
   );
 }
