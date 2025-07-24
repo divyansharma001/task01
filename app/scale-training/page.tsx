@@ -33,28 +33,29 @@ export default function ScaleTraining() {
           {/* <div className="flex flex-col items-center space-y-8"> */}
             {/* Logo */}
             <div className="bg-white py-2 flex justify-center w-full">
-        <div className="w-24 h-24 relative">
-          {/* Lion Logo - Purple geometric design */}
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <defs>
-              <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8B5CF6" />
-                <stop offset="100%" stopColor="#6D28D9" />
-              </linearGradient>
-            </defs>
-            {/* Lion head geometric shape */}
-            <polygon points="50,10 70,25 85,45 80,65 65,75 50,80 35,75 20,65 15,45 30,25" fill="url(#purpleGradient)" />
-            {/* Mane details */}
-            <polygon points="30,20 25,35 35,40 40,25" fill="#7C3AED" />
-            <polygon points="70,20 75,35 65,40 60,25" fill="#7C3AED" />
-            <polygon points="20,50 15,65 25,70 30,55" fill="#7C3AED" />
-            <polygon points="80,50 85,65 75,70 70,55" fill="#7C3AED" />
-            {/* Face features */}
-            <circle cx="42" cy="45" r="3" fill="white" />
-            <circle cx="58" cy="45" r="3" fill="white" />
-            <polygon points="50,50 45,60 55,60" fill="white" />
-          </svg>
+        <div className="elementor-element elementor-element-79d88927 e-con-full e-flex e-con e-parent e-lazyloaded bg-white py-2 sm:py-4 flex justify-center" 
+           data-id="79d88927" 
+           data-element_type="container" 
+           data-settings='{"background_background":"classic"}'>
+        <div className="elementor-element elementor-element-3c60463f elementor-widget elementor-widget-image" 
+             data-id="3c60463f" 
+             data-element_type="widget" 
+             data-widget_type="image.default">
+          <div className="elementor-widget-container">
+            <img 
+              fetchPriority="high" 
+              decoding="async" 
+              width="500" 
+              height="500" 
+              src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" 
+              className="attachment-large size-large wp-image-16077 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain" 
+              alt="Quantum Age Logo" 
+              srcSet="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png 500w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-300x300.png 300w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-150x150.png 150w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-100x100.png 100w" 
+              sizes="(max-width: 500px) 100vw, 500px"
+            />
+          </div>
         </div>
+      </div>
       </div>
 
             {/* Countdown Timer Banner */}

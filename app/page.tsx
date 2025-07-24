@@ -273,10 +273,12 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="elementor-element elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
-           data-id="5cf9b718" 
-           data-element_type="container" 
-           data-settings='{"background_background":"classic"}'>
+      <motion.div 
+        className="elementor-element bg-black elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
+        data-id="5cf9b718" 
+        data-element_type="container" 
+        data-settings='{"background_background":"classic"}'
+      >
         <div className="e-con-inner max-w-6xl mx-auto px-2 sm:px-4">
           <div className="elementor-element elementor-element-3a3d2be2 e-con-full e-flex e-con e-child" 
                data-id="3a3d2be2" 
@@ -287,9 +289,15 @@ export default function Home() {
                  data-settings='{"_animation":"fadeInUp"}' 
                  data-widget_type="heading.default">
               <div className="elementor-widget-container">
-                <h3 className="elementor-heading-title elementor-size-default text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 tracking-tight">
+                <motion.h3 
+                  className="elementor-heading-title elementor-size-default text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 tracking-tight"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
                   © QUANTUM AGE 2025
-                </h3>
+                </motion.h3>
               </div>
             </div>
           </div>
@@ -298,41 +306,65 @@ export default function Home() {
                data-element_type="container">
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="elementor-element elementor-element-232af406 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
-           data-id="232af406" 
-           data-element_type="container" 
-           data-settings='{"background_background":"classic"}'>
+      <motion.div 
+        className="elementor-element elementor-element-232af406 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
+        data-id="232af406" 
+        data-element_type="container" 
+        data-settings='{"background_background":"classic"}'
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="e-con-inner max-w-6xl mx-auto px-2 sm:px-4">
-          <div className="elementor-element elementor-element-8649a7b elementor-widget elementor-widget-text-editor animated fadeInUp mb-4 sm:mb-6" 
-               data-id="8649a7b" 
-               data-element_type="widget" 
-               data-settings='{"_animation":"fadeInUp"}' 
-               data-widget_type="text-editor.default">
+          <motion.div 
+            className="elementor-element elementor-element-8649a7b elementor-widget elementor-widget-text-editor animated fadeInUp mb-4 sm:mb-6" 
+            data-id="8649a7b" 
+            data-element_type="widget" 
+            data-settings='{"_animation":"fadeInUp"}' 
+            data-widget_type="text-editor.default"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
             <div className="elementor-widget-container">
               <p className="text-xs sm:text-sm md:text-base leading-relaxed text-gray-300">
                 This website is not a part of the Facebook website or Facebook Inc., nor is it part of Google or affiliated with Google Inc. Additionally, this site is not endorsed by Facebook or Google in any way. Facebook is a trademark of Facebook, Inc., and Google is a trademark of Google Inc.
               </p>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="elementor-element elementor-element-6cb94d3 elementor-widget elementor-widget-text-editor mb-6 sm:mb-8" 
-               data-id="6cb94d3" 
-               data-element_type="widget" 
-               data-widget_type="text-editor.default">
+          <motion.div 
+            className="elementor-element elementor-element-6cb94d3 elementor-widget elementor-widget-text-editor mb-6 sm:mb-8" 
+            data-id="6cb94d3" 
+            data-element_type="widget" 
+            data-widget_type="text-editor.default"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div className="elementor-widget-container">
               <p className="text-xs leading-relaxed text-gray-400">
                 Results Disclaimer: Results may vary. All testimonials are real. These results are meant as a showcase of what the best, most motivated clients have done. By virtue of visiting this site or interacting with any portion of this site, you agree that you're fully responsible for the investments you make and any outcomes that may result.
               </p>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="elementor-element elementor-element-2802c20 elementor-widget-mobile__width-inherit elementor-icon-list--layout-inline elementor-align-center elementor-mobile-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list animated fadeInUp" 
-               data-id="2802c20" 
-               data-element_type="widget" 
-               data-settings='{"_animation":"fadeInUp"}' 
-               data-widget_type="icon-list.default">
+          <motion.div 
+            className="elementor-element elementor-element-2802c20 elementor-widget-mobile__width-inherit elementor-icon-list--layout-inline elementor-align-center elementor-mobile-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list animated fadeInUp" 
+            data-id="2802c20" 
+            data-element_type="widget" 
+            data-settings='{"_animation":"fadeInUp"}' 
+            data-widget_type="icon-list.default"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            viewport={{ once: true }}
+          >
             <div className="elementor-widget-container">
               <ul className="elementor-icon-list-items elementor-inline-items flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm md:text-base">
                 <li className="elementor-icon-list-item elementor-inline-item">
@@ -357,14 +389,20 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <section className="elementor-section elementor-top-section elementor-element elementor-element-3b1ac6fb elementor-section-boxed elementor-section-height-default bg-black py-4" 
-               data-id="3b1ac6fb" 
-               data-element_type="section" 
-               data-settings='{"background_background":"classic"}'>
+      <motion.section 
+        className="elementor-section elementor-top-section elementor-element elementor-element-3b1ac6fb elementor-section-boxed elementor-section-height-default bg-black py-4" 
+        data-id="3b1ac6fb" 
+        data-element_type="section" 
+        data-settings='{"background_background":"classic"}'
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="elementor-container elementor-column-gap-default max-w-6xl mx-auto">
           <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b7fd3a6" 
                data-id="4b7fd3a6" 
@@ -373,7 +411,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Scroll to Top Button */}
       <motion.button
