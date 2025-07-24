@@ -97,6 +97,34 @@ export default function ScaleTraining() {
             </div>
           </div>
         </div>
+
+        {/* CTA Section */}
+        <div className="max-w-7xl mx-auto px-4 mt-8">
+          <div className="bg-gradient-to-r from-purple-700 to-purple-600 rounded-2xl px-8 py-12 text-center text-white shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-wide mb-4">
+              CLAIM YOUR FREE 45 MINUTES STRATEGY SESSION
+            </h2>
+            <p className="text-xl md:text-2xl font-light tracking-wide">
+              Be quick! Free slots are almost gone for this month!
+            </p>
+          </div>
+        </div>
+
+        {/* Image Section */}
+        <div className="max-w-7xl mx-auto px-4 mt-8">
+          <div className="elementor-element elementor-element-df14017 elementor-widget elementor-widget-image" data-id="df14017" data-element_type="widget" data-widget_type="image.default">
+            <div className="elementor-widget-container flex justify-center">
+              <img 
+                decoding="async" 
+                src="https://quantumage.ai/wp-content/uploads/elementor/thumbs/Your-paragraph-text-3-r52vz0zyy5xc5ypsl7ev6nrc00fpf61fsszkfbxl2y.png" 
+                title="Your paragraph text (3)" 
+                alt="Your paragraph text (3)" 
+                loading="lazy"
+                className="max-w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
