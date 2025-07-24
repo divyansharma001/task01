@@ -1,11 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ScaleTraining() {
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
 
   useEffect(() => {
+    // Load Google Fonts
+    const bigShouldersLink = document.createElement('link');
+    bigShouldersLink.href = 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap';
+    bigShouldersLink.rel = 'stylesheet';
+    document.head.appendChild(bigShouldersLink);
+
+    // Load Montserrat font for the banner
+    const montserratLink = document.createElement('link');
+    montserratLink.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap';
+    montserratLink.rel = 'stylesheet';
+    document.head.appendChild(montserratLink);
+
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
@@ -16,7 +29,18 @@ export default function ScaleTraining() {
       });
     }, 1000);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      // Cleanup fonts on component unmount
+      const existingBigShouldersLink = document.querySelector('link[href*="Big+Shoulders+Display"]');
+      if (existingBigShouldersLink) {
+        document.head.removeChild(existingBigShouldersLink);
+      }
+      const existingMontserratLink = document.querySelector('link[href*="Montserrat"]');
+      if (existingMontserratLink) {
+        document.head.removeChild(existingMontserratLink);
+      }
+    };
   }, []);
 
   const formatTime = (seconds: number) => {
@@ -59,17 +83,12 @@ export default function ScaleTraining() {
       </div>
 
             {/* Countdown Timer Banner */}
-            <div className="max-w-3xl w-full">
-              <div className="bg-black rounded-full px-6 py-3 shadow-2xl flex items-center justify-center">
-                <div className="flex items-center space-x-4">
-                  <div className="relative flex items-center justify-center w-5 h-5">
-                    <div className="absolute w-full h-full bg-red-500 rounded-full animate-ping opacity-75"></div>
-                    <div className="relative w-3 h-3 bg-red-600 rounded-full"></div>
-                  </div>
-                  <span className="text-white text-sm md:text-base font-bold tracking-wider uppercase">
-                    YOUR COURSE WILL ARRIVE IN {formatTime(timeLeft)} MINUTES. WHILE YOU WAIT, WATCH THIS
-                  </span>
-                </div>
+            <div className="max-w-3xl w-full px-4">
+              <div className="alert-bar flex items-center bg-[#1a1a1a] text-white px-5 py-3 rounded-[25px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] font-bold text-xs leading-6 max-w-full text-left flex-row gap-6 my-5 mx-auto" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <div className="red-dot w-[15px] h-[15px] bg-red-500 rounded-full shadow-[0_0_12px_4px_rgba(255,0,0,0.8)] border-2 border-red-500 flex-shrink-0 animate-pulse"></div>
+                <span className="text-white">
+                  YOUR COURSE WILL ARRIVE IN {formatTime(timeLeft)} MINUTES WHILE YOU WAIT AND WATCH THIS
+                </span>
               </div>
             </div>
           {/* </div> */}
@@ -79,11 +98,23 @@ export default function ScaleTraining() {
       {/* Main Content */}
       <main className="px-4 pb-16">
         {/* Main Headline */}
-        <div className="max-w-5xl mx-auto text-center my-8">
-          <h1 className="text-white text-4xl md:text-5xl font-black leading-tight tracking-wide uppercase">
-            LEARN HOW I FILTER HIGHEST QUALITY LEADS WITH "SCALE FUNNELS" AND TURN DEAD CAMPAIGNS INTO 40, 50 OR EVEN 80L+ REVENUE PER MONTH
-          </h1>
-        </div>
+        <motion.div 
+          className="max-w-7xl mx-auto text-center my-10
+           sm:mt-24 sm:mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.h1 
+            className="text-white text-3xl sm:text-2xl capitalize md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tighter mb-4 sm:mb-6 md:mb-8 tracking-tight px-2"
+            style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            LEARN HOW I filter highest quality leads with SCALE funnels and turn dead camapigns into 40, 50 or even 80L+ revenue PER month
+          </motion.h1>
+        </motion.div>
 
         {/* Video Section */}
         <div className="max-w-7xl mx-auto px-4">
@@ -101,14 +132,13 @@ export default function ScaleTraining() {
 
         {/* CTA Section */}
         <div className="max-w-7xl mx-auto px-4 mt-8">
-          <div className="relative bg-gradient-to-r from-[#572B6F] to-[#321B49] rounded-2xl px-8 py-12 text-center text-white shadow-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-[0_20px_40px_rgba(115,63,150,0.4)] group cursor-pointer">
+          <div className="relative bg-gradient-to-r from-[#572B6F] to-[#321B49] rounded-2xl px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 text-center text-white shadow-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-[0_20px_40px_rgba(115,63,150,0.4)] group cursor-pointer flex flex-col items-center justify-center">
             {/* Shine effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-full -translate-y-full group-hover:translate-x-full group-hover:translate-y-full"></div>
-            
-            <h2 className="relative z-10 text-4xl md:text-5xl font-black uppercase tracking-wide mb-4">
-              CLAIM YOUR FREE 45 MINUTES STRATEGY SESSION
+            <h2 className="relative z-10 w-full text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-wide mb-2 sm:mb-4 leading-tight" style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}>
+              CLAIM YOUR FREE 45 MINUTES<br className="block sm:hidden" />STRATEGY SESSION
             </h2>
-            <p className="relative z-10 text-xl md:text-2xl font-light tracking-wide">
+            <p className="relative z-10 w-full text-center text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Be quick! Free slots are almost gone for this month!
             </p>
           </div>
@@ -134,9 +164,9 @@ export default function ScaleTraining() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-24 text-left">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-6xl mb-24 font-bold tracking-wider">© QUANTUM AGE 2025</p>
+      <footer className="bg-black text-white py-12 sm:py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider">© QUANTUM AGE 2025</p>
         </div>
       </footer>
 

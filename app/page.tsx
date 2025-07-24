@@ -347,8 +347,7 @@ export default function Home() {
 
       {/* Footer */}
       <div 
-        className="elementor-element bg-black elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
-    
+        className="elementor-element elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
       >
         <div className="e-con-inner max-w-6xl mx-auto px-2 sm:px-4">
           <div className="elementor-element elementor-element-3a3d2be2 e-con-full e-flex e-con e-child" 
@@ -377,17 +376,13 @@ export default function Home() {
                data-element_type="container">
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div 
+      <div 
         className="elementor-element elementor-element-232af406 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
         data-id="232af406" 
         data-element_type="container" 
         data-settings='{"background_background":"classic"}'
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true, amount: 0.3 }}
       >
         <div className="e-con-inner max-w-6xl mx-auto px-2 sm:px-4">
           <motion.div 
@@ -462,7 +457,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       <motion.section 
         className="elementor-section elementor-top-section elementor-element elementor-element-3b1ac6fb elementor-section-boxed elementor-section-height-default bg-black py-4" 
