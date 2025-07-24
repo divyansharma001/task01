@@ -126,11 +126,11 @@ export default function Home() {
       </div>
 
       {/* Purple Hero Section */}
-      <div className="bg-gradient-to-b from-[#432459] to-[#646464] px-4 py-10">
+      <div className="bg-gradient-to-b from-[#432459] to-[#646464] px-4 py-2">
         {/* Course Value Banner */}
         <div className="max-w-5xl mx-auto mb-12">
-          <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl">
-            <h2 className="text-black text-2xl md:text-3xl lg:text-4xl font-black text-center leading-tight tracking-tight">
+          <div className="bg-white rounded-b-3xl px-8 py-6 shadow-2xl">
+            <h2 className="text-black text-2xl md:text-3xl font-black text-center leading-tight tracking-tight">
               ADVANCED MARKETING COURSE WORTH<br />
               <span className="text-purple-700">RS. 2.5L</span> SENT TO YOUR EMAIL FOR FREE
             </h2>
