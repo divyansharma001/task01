@@ -125,8 +125,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#432459] to-[#646464]">
-      {/* Logo Section */}
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#432459] to-[#646464]">
       <div className="elementor-element elementor-element-79d88927 e-con-full e-flex e-con e-parent e-lazyloaded bg-white py-2 sm:py-4 flex justify-center" 
            data-id="79d88927" 
            data-element_type="container" 
@@ -151,7 +150,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Purple Hero Section */}
       <div className="bg-gradient-to-b from-[#432459] to-[#646464] px-2 sm:px-4 py-2">
         {/* Course Value Banner */}
         <div className="max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
@@ -207,145 +205,110 @@ export default function Home() {
         </div>
 
         {/* Lead Form Section */}
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 md:px-8 mb-8 sm:mb-12 md:mb-16">
-          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            {/* Logo */}
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center mb-6">
-                <img decoding="async" width="500" height="500" src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" className="attachment-large size-large wp-image-16077 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain" alt="Quantum Age Logo" srcSet="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png 500w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-300x300.png 300w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-150x150.png 150w, https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE-100x100.png 100w" sizes="(max-width: 500px) 100vw, 500px"/>
-                <h1 
-                  className="text-4xl md:text-5xl font-bold text-[#4c1d95]"
-                  style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}
-                >
-                  THE QUANTUM AGE
-                </h1>
-              </div>
-            </div>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name */}
-              <div>
-                <label 
-                  htmlFor="fullName" 
-                  className="block text-base font-semibold text-gray-700 mb-2"
-                >
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
-                    errors.fullName 
-                      ? 'border-red-500' 
-                      : 'border-gray-300'
-                  }`}
-                  placeholder="Full Name"
-                />
-                {errors.fullName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
-                )}
-              </div>
-
-              {/* Email */}
-              <div>
-                <label 
-                  htmlFor="email" 
-                  className="block text-base font-semibold text-gray-700 mb-2"
-                >
-                  Email *
-                </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
-                      errors.email 
-                        ? 'border-red-500' 
-                        : 'border-gray-300'
-                    }`}
-                    placeholder="Email"
-                  />
-                  <img 
-                    src="https://i.ibb.co/6g2wVpD/Screenshot-2024-07-25-at-2-05-15-AM-removebg-preview.png" 
-                    alt="Email Icon" 
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-auto"
-                  />
+        <div className="flex items-center justify-center min-h-[80vh] w-full  ">
+          <div className="flex items-center justify-center w-fit bg-[#593571] p-2 sm:py-8 sm:px-12">
+            <div className="bg-white rounded-sm shadow-xl p-6 sm:p-10 md:p-12 max-w-full" style={{ width: 'fit-content' }}>
+              {/* Logo */}
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center mb-6">
+                  <img decoding="async" width="64" height="64" src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" className="w-16 h-16 object-contain mr-4" alt="Quantum Age Logo" />
+                  <h1 className="text-2xl md:text-5xl font-bold text-[#764199]" style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}>
+                    THE QUANTUM AGE
+                  </h1>
                 </div>
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-                <p className="text-xs text-gray-500 mt-2">
-                  P.S. You'll get access to the course via Email (make sure it is correct).
-                </p>
               </div>
-
-              {/* Phone */}
-              <div>
-                <label 
-                  htmlFor="phone" 
-                  className="block text-base font-semibold text-gray-700 mb-2"
-                >
-                  Phone *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
-                    errors.phone 
-                      ? 'border-red-500' 
-                      : 'border-gray-300'
-                  }`}
-                  placeholder="Phone"
-                />
-                {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                )}
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full py-4 px-6 text-lg font-bold text-white rounded-md transition-all duration-300 text-center ${
-                    isSubmitting 
-                      ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-[#6d28d9] hover:bg-[#5b21b6]'
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Submitting...</span>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col items-center">
-                      <span>WATCH NOW FOR FREE!</span>
-                      <span className="text-xs font-normal mt-1">
-                        Instant access to masterclass & marketing course!
-                      </span>
-                    </div>
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Full Name */}
+                <div>
+                  <label htmlFor="fullName" className="block text-base font-semibold text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.fullName ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Full Name"
+                  />
+                  {errors.fullName && (
+                    <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
                   )}
-                </button>
-              </div>
-            </form>
+                </div>
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="block text-base font-semibold text-gray-700 mb-2">
+                    Email *
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                      placeholder="Email"
+                    />
+                    <img src="https://i.ibb.co/6g2wVpD/Screenshot-2024-07-25-at-2-05-15-AM-removebg-preview.png" alt="Email Icon" className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-auto" />
+                  </div>
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                  <p className="text-xs text-gray-500 mt-2">
+                    P.S. You'll get access to the course via Email (make sure it is correct).
+                  </p>
+                </div>
+                {/* Phone */}
+                <div>
+                  <label htmlFor="phone" className="block text-base font-semibold text-gray-700 mb-2">
+                    Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Phone"
+                  />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  )}
+                </div>
+                {/* Submit Button */}
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 px-6 text-lg font-bold text-white rounded-md transition-all duration-300 text-center ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#764199]'}`}
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Submitting...</span>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col items-center">
+                        <span>WATCH NOW FOR FREE!</span>
+                        <span className="text-xs font-normal mt-1">
+                          Instant access to masterclass & marketing course!
+                        </span>
+                      </div>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
         
       </div>
 
-      {/* Footer */}
       <div 
         className="elementor-element elementor-element-5cf9b718 e-flex e-con-boxed e-con e-parent e-lazyloaded bg-black text-white py-6 sm:py-8 md:py-10" 
       >
@@ -459,15 +422,11 @@ export default function Home() {
         </div>
       </div>
 
-      <motion.section 
+      <section 
         className="elementor-section elementor-top-section elementor-element elementor-element-3b1ac6fb elementor-section-boxed elementor-section-height-default bg-black py-4" 
         data-id="3b1ac6fb" 
         data-element_type="section" 
         data-settings='{"background_background":"classic"}'
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
       >
         <div className="elementor-container elementor-column-gap-default max-w-6xl mx-auto">
           <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b7fd3a6" 
@@ -477,9 +436,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Scroll to Top Button */}
       <motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 z-50 group"
