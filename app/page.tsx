@@ -293,8 +293,8 @@ export default function Home() {
                       </div>
                     ) : (
                       <div className="flex flex-col items-center">
-                        <span>WATCH NOW FOR FREE!</span>
-                        <span className="text-xs font-normal mt-1">
+                        <span className='text-sm mb-2'>WATCH NOW FOR FREE!</span>
+                        <span className="text-xs font-normal mt-1 tracking-tighter">
                           Instant access to masterclass & marketing course!
                         </span>
                       </div>
