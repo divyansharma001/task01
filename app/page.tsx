@@ -205,14 +205,14 @@ export default function Home() {
         </div>
 
         {/* Lead Form Section */}
-        <div className="flex items-center justify-center min-h-[80vh] w-full  ">
-          <div className="flex items-center justify-center w-fit bg-[#593571] p-2 sm:py-8 sm:px-12">
-            <div className="bg-white rounded-sm shadow-xl p-6 sm:p-10 md:p-12 max-w-full" style={{ width: 'fit-content' }}>
+        <div className=" flex items-center justify-center min-h-[80vh] w-full  ">
+          <div className="flex items-center justify-center w-fit rounded-md bg-[#593571] p-3 pb-12 sm:py-8 sm:px-12">
+            <div className="bg-white rounded-sm shadow-xl p-6  sm:p-10 md:p-12 max-w-full" style={{ width: 'fit-content' }}>
               {/* Logo */}
               <div className="text-center mb-8">
                 <div className="flex items-center justify-center mb-6">
                   <img decoding="async" width="64" height="64" src="https://quantumage.ai/wp-content/uploads/2025/02/Quantum-Age-Logo-FEFEFE.png" className="w-16 h-16 object-contain mr-4" alt="Quantum Age Logo" />
-                  <h1 className="text-2xl md:text-5xl font-bold text-[#764199]" style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}>
+                  <h1 className="text-2xl md:text-5xl font-bold text-[#412259]" style={{ fontFamily: 'Big Shoulders Display, sans-serif' }}>
                     THE QUANTUM AGE
                   </h1>
                 </div>
@@ -230,7 +230,7 @@ export default function Home() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.fullName ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-4 py-1 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.fullName ? 'border-red-500' : 'border-gray-300'}`}
                     placeholder="Full Name"
                   />
                   {errors.fullName && (
@@ -249,7 +249,7 @@ export default function Home() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-4 py-1 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Email"
                     />
                     <img src="https://i.ibb.co/6g2wVpD/Screenshot-2024-07-25-at-2-05-15-AM-removebg-preview.png" alt="Email Icon" className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-auto" />
@@ -272,7 +272,7 @@ export default function Home() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-4 py-1 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#764199] focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
                     placeholder="Phone"
                   />
                   {errors.phone && (
